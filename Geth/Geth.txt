@@ -1,0 +1,37 @@
+Roteiro para inicar e rodar o geth privado, e iniciar e rodar geth na mainnet.
+
+Pré-requisitos:
+1. Geth
+2. Mist
+
+Geth Privado Inicialização:
+1. Cria seu próprio genesis.json (tem também o genesis file usado para aula). Ponha o arquivo numa pasta qualquer. Chamaremos o caminho (full path) para essa pasta de GenesisPATH.
+
+2. Vá até a pasta no terminal e execute o comando: "geth --datadir /GenesisPATH init genesis.json"
+-> É inicializado a blockchain
+
+3. No terminal: "geth --datadir /GenesisPATH"
+-> Você cria o arquivo "geth.ipc".
+
+4. Rode o geth com o comando (no terminal): "geth --datadir /GenesisPATH --newtorkid 17"
+
+5. Em outra aba do terminal, execute o comando: "geth attach ipc:/GenesisPATH/geth.ipc"
+-> Isso te da acesso ao console javascript com a API web3.
+
+Para abrir o Mist na Private-net:
+6. Em outra aba do terminal, vá até onde estiver a aplicação Mist (no Ubunto /usr/shared/applications/)
+
+7. Depois execute o comando: "mist --args --rpc /GenesisPATH/geth.ipc"
+
+
+Dado que você já criou sua private-net e quer reutiliza-la, comece a partir do 3o passo.
+
+====== Main net ======
+Se quiser rodar o geth na Mainnet:
+
+1. Rode "geth" no terminal.
+
+2. Em outro terminal, rode: "geth attach" para abrir o javascript console.
+
+3. Verifique que está na Mainnet com o comando "eth.getBlock(0).hash" no javascript console, e compare
+com o hash: "0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3".

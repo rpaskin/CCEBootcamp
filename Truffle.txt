@@ -1,0 +1,31 @@
+Roteiro para inicar e rodar o Truffle webpack.
+
+Pré-requisitos:
+1. Truffle
+2. npm
+3. Ganache (GUI)
+4. solc (compilador solidity)
+
+Truffle Inicialização:
+1. Cria um diretório. Chamaremos o caminho (full path) para essa pasta de TrufflePATH.
+
+2. Dentro do diretório, execute no terminal: "truffle unbox webpack"
+
+3. Para rodas os testes: "truffle test"
+
+4. Para compilar os contratos: "truffle compile"
+
+==== A partir daqui é necessário ter um nó da Ethereum rodando (Geth/Ganache) ====
+
+5. Para gerar os artefatos específicos do Truffle mas necessários: "truffle migrate"
+
+6. Para compilar, gerar os artefatos necessários do Truffle, e deployar o contrato para rede: "truffle deploy"
+
+
+
+Ganache Inicialização:
+1. Vá até a pasta onde está o ganache, execute no terminal: "npm start".
+
+
+Rodar o servidor local do exemplo:
+1. Vá á TrufflePath e execute: "npm run dev"
